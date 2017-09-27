@@ -91,9 +91,9 @@ open class AutoKeyboardScrollView: UIScrollView {
 			
             contentViewEqualWidthConstraint = contentViewConstraintEqual(.width)
             if contentViewWidthEqualsToScrollView {
-                contentViewEqualWidthConstraint.priority = 1000
+                contentViewEqualWidthConstraint.priority = UILayoutPriority(1000)
             } else {
-                contentViewEqualWidthConstraint.priority = 10
+                contentViewEqualWidthConstraint.priority = UILayoutPriority(10)
             }
 			
             self.addConstraint(contentViewEqualWidthConstraint)
@@ -107,9 +107,9 @@ open class AutoKeyboardScrollView: UIScrollView {
 			
             contentViewEqualHeightConstraint = contentViewConstraintEqual(.height)
             if contentViewHeightEqualsToScrollView {
-                contentViewEqualHeightConstraint.priority = 1000
+                contentViewEqualHeightConstraint.priority = UILayoutPriority(1000)
             } else {
-                contentViewEqualHeightConstraint.priority = 10
+                contentViewEqualHeightConstraint.priority = UILayoutPriority(10)
             }
 			
             self.addConstraint(contentViewEqualHeightConstraint)
@@ -324,12 +324,12 @@ open class AutoKeyboardScrollView: UIScrollView {
         // If equal width is not required, set its priority to a low value
         if contentViewWidthEqualsToScrollView == false {
             // Set its priority to be a very low value, to avoid conflicts
-            contentViewEqualWidthConstraint.priority = 10
+            contentViewEqualWidthConstraint.priority = UILayoutPriority(10)
         }
 		
         contentViewEqualHeightConstraint = contentViewConstraintEqual(.height)
         if contentViewHeightEqualsToScrollView == false {
-            contentViewEqualHeightConstraint.priority = 10
+            contentViewEqualHeightConstraint.priority = UILayoutPriority(10)
         }
 		
         self.addConstraints([top, left, bottom, right, contentViewEqualWidthConstraint, contentViewEqualHeightConstraint])
